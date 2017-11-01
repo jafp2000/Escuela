@@ -1,0 +1,98 @@
+<!-- IMPORTE DE SLICK -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+<div class="box">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2 style="color:white">Elige tu Sucursal y Curso</h2><br>
+          <div class="form-group">
+            <select class="form-control" id="sel1">
+              <option>La Serena</option>
+              <option>La Cava</option>
+              <option>Santiago Centro</option>
+              <option>Barquisimeto</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-9" style="padding-left: 0px !important;">
+          <img src="//ocass-kevingn.c9users.io/ventaonline/img/newcalama.png" width="877px"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container">
+          <div class="your-class">
+            <!--div><img src="//lorempixel.com/300/200/transport/1" /></div-->
+            <div><img src="assets/img/productos/1.png" /></div>
+            <div><img src="assets/img/productos/2.png" /></div>
+            <div><img src="assets/img/productos/3.png" /></div>
+            <div><img src="assets/img/productos/4.png" /></div>
+            <div><img src="assets/img/productos/5.png" /></div>
+            <div><img src="assets/img/productos/6.png" /></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1><span></span></h1>
+    <h2 align="left">Cursos Licencia Clase B</h2>
+    <h3 align="left">Vehiculos Particulares</h3>
+    <hr>
+    <h4 align="left">Cursos Disponibles</h4>
+    <h6 align="left">Seleccione un curso de su interés para ver fechas y horarios disponibles</h6>
+    <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Get it now</a></p>-->
+    <div class="my-class slider-nav" >
+        <div><img src="assets/img/cursos/r1.png"  (click)="select(1)"/></div>
+        <div><img src="assets/img/cursos/r2.png" (click)="select(2)"/></div>
+        <div><img src="assets/img/cursos/r3.png" (click)="select(3)"/></div>
+        <div><img src="assets/img/cursos/r4.png" (click)="select(4)"/></div>
+    </div>
+
+
+    <div class="row">
+      <div *ngIf="flecha1"><img src="assets/img/flechas/f1.png" /></div>
+      <div *ngIf="flecha2"><img src="assets/img/flechas/f2.png" /></div>
+      <div *ngIf="flecha3"><img src="assets/img/flechas/f1.png" /></div>
+      <div *ngIf="flecha4"><img src="assets/img/flechas/f2.png" /></div>
+    </div>
+  </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+<script type="text/javascript" >
+   $(document).ready(function(){
+   $('.your-class').slick({
+      slidesToShow: 4,
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 2000,
+   });
+   $('.my-class').slick({
+      slidesToShow: 2,
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 2000,
+   });
+  });
+</script>
+<script type="text/javascript" >
+  $('.slider-for').slick({
+   slidesToShow: 1,
+   slidesToScroll: 1,
+   arrows: false,
+   fade: true,
+   autoplay: true,
+   asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+   slidesToShow: 2,
+   slidesToScroll: 1,
+   asNavFor: '.slider-for',
+   dots: false,
+   centerMode: false,
+   focusOnSelect: true,
+
+  });
+</script>
