@@ -1,0 +1,26 @@
+#calendar {
+    margin-top: 20px;
+}
+
+.datepicker td a
+{    
+  height: 1.4em;   
+}
+
+.datepicker
+{ 
+    width: 12em;
+}
+    
+.event a {
+    background-color: #93268e !important;
+    background-image :none !important;
+    color: #ffffff !important;
+}
+
+    
+.inicio a {
+    background-color: #0070bc !important;
+    background-image :none !important;
+    color: #ffffff !important;
+}

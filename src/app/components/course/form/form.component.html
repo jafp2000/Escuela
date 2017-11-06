@@ -1,200 +1,325 @@
-
 <div class="formulario">
-    <div class="row">
-      <div class="container">
-        <h3 align="left" style="color:#ec6608;font-size:28px;">Seleccione la fecha de inicio y horario de su preferencia</h3>
-        <hr style="border-top: 1px solid #ec6608;">
-      </div>
-    </div>
-    <div class="row">
-      <!-- CALENDARIO -->
-      <div class="col-md-6" align="center">
-        <div class="col-md-offset-1">
-          <div class="calendar-bg-gris">
-            <h3> Calendario </h3>
-            <div class="row">
-              <div class="col-md-6" align="left">
-                <p>
-                  <span class="calendar1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Inicio Disponible</b><br>
-                  <span class="calendar2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Dias de Clases Teoricas</b><br>
-                  <span class="calendar3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> No Disponible - Festivos</b>
-                </p>
-              </div>
-              <div class="col-md-6" align="left">
-                <p>
-                  <span class="calendar4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Fecha de Inicio Seleccionada</b><br>
-                  <span class="calendar5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Dias de Clases Practicas</b>
-                </p>
-              </div>
-            </div>
-          </div>
+		<!-- CALENDARIO -->
+		<div class="row">
+			<div class="container">
+				<h3 align="left" style="color:#ec6608;font-size:28px;">Seleccione la fecha de inicio y horario de su preferencia</h3>
+				<hr style="border-top: 1px solid #ec6608;">
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6" align="center">
+				<div class="col-md-offset-1">
 
-          <div class="row">
-            <ngb-datepicker #dp (navigate)="date = $event.next"></ngb-datepicker>
-            <div class="col-md-12">
-              <dl>
-                  <dt class="calendar2"> Inicio de Clases Teoricas:               1 de Agosto</dt>
-                <dt class="calendar2"> Termino de Clases Teoricas:               9 de Agosto</dt>
-              </dl>
-            </div>
-        </div>
-      </div>
-    </div>
-      <!-- HORARIOS -->
-      <div class="col-md-6">
-        <div align="left">
-          <div class="container">
-            <h4 style="color: #f39500">Horarios de clases teoricas</h4>
-            <h6>Lunes a Sabado, de 19:00 a 21:00 hrs.</h6>
-            <h4 style="color: #f39500">Horarios de clases practicas</h4>
-            <h6>Disponibles segun tu seleccion, desde: Lunes 16 de octubre al jueves 19 de octubre.</h6>
-            <h5 style="color: #f39500">Puede seleccionar el horario que mejor le acomode</h5>
-            <div class="row">
-                <div class="row" align="left">
-                  <p>
-                    <span style="background-color: #aedabd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Tarifa Baja (10%)   </b>
-                    <span style="background-color: #fcce9e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Tarifa Media (5%)   </b>
-                    <span style="background-color: #e2a1a4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Tarfica Alta (0%)   </b>
-                  </p>
-                </div>
-                <div class="row" align="left">
-                  <p>
-                    <span style="background-color: #859ea7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> No Disponible</b><br>
-                  </p>
-                </div>
-            </div>
-            <div>
-              <table class="table">
-                <tr>
-                  <td style="background-color: #aedabd"><input  type="radio" name="optradio">  6:30 - 7:15</td>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  11:45 - 12:30</td>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  17:00 - 17:45</td>
-                </tr>
-                <tr>
-                  <td style="background-color: #aedabd"><input  type="radio" name="optradio">  7:15 - 8:00</td>
-                  <td style="background-color: #aedabd"><input  type="radio" name="optradio">  12:30 - 1:15</td>
-                  <td style="background-color: #e2a1a4"><input  type="radio" name="optradio">  17:45 - 18:30</td>
-                </tr>
-                <tr>
-                  <td style="background-color: #aedabd"><input  type="radio" name="optradio">  8:00 - 8:45</td>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  13:15 - 14:00</td>
-                  <td style="background-color: #e2a1a4"><input  type="radio" name="optradio">  18:30 - 19:15</td>
-                </tr>
-                <tr>
-                  <td style="background-color: #aedabd"><input  type="radio" name="optradio">  8:45 - 9:30</td>
-                  <td style="background-color: #859ea7"><input  type="radio" name="optradio">  14:00 - 14:45</td>
-                  <td style="background-color: #859ea7"><input  type="radio" name="optradio">  19:15 - 20:00</td>
-                </tr>
-                <tr>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  9:30 - 10:15</td>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  14:45 - 15:30</td>
-                  <td style="background-color: #859ea7"><input  type="radio" name="optradio">  20:00 - 20:45</td>
-                </tr>
-                <tr>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  10:15 - 11:00</td>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  15:30 - 16:15</td>
-                  <td style="background-color: #e2a1a4"><input  type="radio" name="optradio">  20:45 - 21:30</td>
-                </tr>
-                <tr>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  11:00 - 11:45</td>
-                  <td style="background-color: #fcce9e"><input  type="radio" name="optradio">  16:15 - 17:30</td>
-                  <td style="background-color: #e2a1a4"><input  type="radio" name="optradio">  21:30 - 22:15</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+					<div class="calendar-bg-gris">
+				    	<h3> Calendario </h3>
+				    	<div class="row">
 
-  <!-- FORM -->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <div class="container">
-        <div class="row"><h2 style="color:#ec6608;font-size:28px;">Datos del Alumno</h2></div>
-        <div class="row">
-          <form class="form-horizontal" action="/action_page.php">
-            <div class="row">
-              <div class="col-6">
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="rut">RUT:</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="rut"  name="rut">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="nombres">Nombres:</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="nombres" name="nombres">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="apellido1">Apellido Paterno:</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="apellido1"  name="apellido1">
-                      </div>
-                    </div> <div class="form-group"> <label class="control-label col-sm-4" for="apellido2">Apellido Materno:</label> <div class="col-sm-8"> <input type="text" class="form-control" id="apellido2"  name="apellido2"> </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="email">e-mail:</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email" name="email">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="email2">Confirme su e-mail:</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email2" name="email2">
-                      </div>
-                    </div>
-                </div>
+					    		<div class="col-md-6" align="left">
+					    			<p>
+					    			<span class="calendar1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Inicio Disponible</b><br>
+					    			<span class="calendar2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Dias de Clases Teoricas</b><br>
+					    			<span class="calendar3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> No Disponible - Festivos</b></p>
+					    		</div>
+					    		<div class="col-md-6" align="left">
+					    			<p>
+					    			<span class="calendar4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Fecha de Inicio Seleccionada</b><br>
+					    			<span class="calendar5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Dias de Clases Practicas</b></p>
 
-                <div class="col-6">
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="calle">Calle:</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="calle" name="calle">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="numero">Numero:</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="numero"  name="numero">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="departamento">Departamento:</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="departamento"  name="departamento">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="fechanac">Fecha de Nacimiento:</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="fechanac"  name="fechanac">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label col-sm-4" for="codvendedor">Codigo vendedor:</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="codvendedor" name="codvendedor">
-                      </div>
-                    </div>
-
-                </div>
-              </div>
-            <div class="row">
-                <div class="form-group">
-                  <div align="center">
-                    <button type="submit" class="btn btn-default">Siguiente</button>
-                  </div>
-                </div>
-              </div>
-          </form>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
+					    		</div>
+				    		</div>
+				    	</div>
+				    	<div class="row">
+							<div id="datepicker"></div>
+							<img src="assets/img/calendario.PNG" (click)="showHorarios()"/>
+							<div class="col-md-12">
+							<dl>
+							    <dt class="calendar2"> Inicio de Clases Teoricas:               1 de Agosto</dt>
+								<dt class="calendar2"> Termino de Clases Teoricas:               9 de Agosto</dt>
+							</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="col-md-6" *ngIf="horarios">
+					<div align="left">
+						<div class="container">
+							<h4 style="color: #f39500">Horarios de clases teoricas</h4>
+							<h6>Lunes a Sabado, de 19:00 a 21:00 hrs.</h6>
+							<h4 style="color: #f39500">Horarios de clases practicas</h4>
+							<h6>Disponibles segun tu seleccion, desde: Lunes 16 de octubre al jueves 19 de octubre.</h6>
+							<h5 style="color: #f39500">Puede seleccionar el horario que mejor le acomode</h5>
+							<div class="row">
+					    		<div class="row" align="left">
+					    			<p>
+					    			<span style="background-color: #aedabd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Tarifa Baja (10%)   </b>
+					    			<span style="background-color: #fcce9e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Tarifa Media (5%)   </b>
+					    			<span style="background-color: #e2a1a4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Tarfica Alta (0%)   </b></p>
+					    		</div>
+					    		<div class="row" align="left">
+					    			<p>
+					    			<span style="background-color: #859ea7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> No Disponible</b><br>
+					    		</div>
+				    		</div>
+							<div class="col-md-6">
+								<table class="table">
+									<tr>
+										<td style="background-color: #aedabd"><input  type="radio" name="optradio" (change)="showDatos()">  6:30 - 7:15</td>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  11:45 - 12:30</td>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  17:00 - 17:45</td>
+									</tr>
+									<tr>
+										<td style="background-color: #aedabd"><input  type="radio" name="optradio">  7:15 - 8:00</td>
+										<td style="background-color: #aedabd"><input  type="radio" name="optradio">  12:30 - 1:15</td>
+										<td style="background-color: #e2a1a4"><input  type="radio" name="optradio">  17:45 - 18:30</td>
+									</tr>
+									<tr>
+										<td style="background-color: #aedabd"><input  type="radio" name="optradio">  8:00 - 8:45</td>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  13:15 - 14:00</td>
+										<td style="background-color: #e2a1a4"><input  type="radio" name="optradio">  18:30 - 19:15</td>
+									</tr>
+									<tr>
+										<td style="background-color: #aedabd"><input  type="radio" name="optradio">  8:45 - 9:30</td>
+										<td style="background-color: #859ea7"><input  type="radio" name="optradio">  14:00 - 14:45</td>
+										<td style="background-color: #859ea7"><input  type="radio" name="optradio">  19:15 - 20:00</td>
+									</tr>
+									<tr>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  9:30 - 10:15</td>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  14:45 - 15:30</td>
+										<td style="background-color: #859ea7"><input  type="radio" name="optradio">  20:00 - 20:45</td>
+									</tr>
+									<tr>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  10:15 - 11:00</td>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  15:30 - 16:15</td>
+										<td style="background-color: #e2a1a4"><input  type="radio" name="optradio">  20:45 - 21:30</td>
+									</tr>
+									<tr>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  11:00 - 11:45</td>
+										<td style="background-color: #fcce9e"><input  type="radio" name="optradio">  16:15 - 17:30</td>
+										<td style="background-color: #e2a1a4"><input  type="radio" name="optradio">  21:30 - 22:15</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<div *ngIf="datos">	
+			<!-- Resumen -->
+			<div class="container">
+	    <div class="row">
+	      <h2 style="color:#ec6608;font-size:28px;">Resumen del Curso Seleccionado</h2>
+	      <hr style="border-top: 1px solid #ec6608;">
+	    </div>
+	    <div class="row">
+	      <div class="col-md-2">
+	        <img src="assets/img/productos/1.png" height="200px" width="180px"/>
+	      </div>
+	      <div class="col-md-3">
+	        <h4 style="color:#ec6608;">Curso Teorico</h4>
+	        <p>
+	          Lunes a Sabado, de 9:00 a 12:00 hrs.<br>
+	          Inicio: Martes 1 de Agosto<br>
+	          Termino: Lunes 9 de Agosto
+	        </p>
+	        <h4 style="color:#ec6608;">Curso Practico</h4>
+	        <p>
+	          Inicio: Martes 10 de Agosto<br>
+	          Termino: Lunes 24 de Agosto
+	        </p>
+	        <h4 style="color:#ec6608;">Numero de Tramos</h4>
+	        <p>
+	          <b>12</b>
+	        </p><br><br>
+	        <h4 style="color:#ec6608;">Valor de la Compra</h4>
+	        <h3>
+	          <b>$99.990</b>
+	        </h3>
+	
+	      </div>
+	      <style type="text/css">
+	        .grey {
+	          background-color: #8ea3ad;
+	        }
+	        .gris {
+	          background-color: #edeff2;
+	        }
+	
+	      </style>
+	      <div class="col-md-7">
+	        <h4 style="color:#ec6608;">Horarios Curso Practivo Baja</h4>
+	        <table class="table" style="background-color:#edeff2;">
+	            <colgroup>
+	              <col class="gris" />
+	              <col class="grey" />
+	              <col class="gris" />
+	              <col class="gris" />
+	              <col class="gris" />
+	              <col class="grey" />
+	              <col class="gris" />
+	            </colgroup>
+	            <thead>
+	              <tr>
+	                <th>Sesion</th>
+	                <th>Hora</th>
+	                <th>Valor</th>
+	                <th></th>
+	                <th>Sesion</th>
+	                <th>Hora</th>
+	                <th>Valor</th>
+	              </tr>
+	            </thead>
+	            <tbody>
+	              <tr>
+	                <td>1 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	                <td></td>
+	                <td>7 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	              </tr>
+	
+	              <tr>
+	                <td>1 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	                <td></td>
+	                <td>7 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	              </tr>
+	              <tr>
+	                <td>1 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	                <td></td>
+	                <td>7 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	              </tr>
+	              <tr>
+	                <td>1 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	                <td></td>
+	                <td>7 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	              </tr>
+	              <tr>
+	                <td>1 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	                <td></td>
+	                <td>7 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	              </tr>
+	              <tr>
+	                <td>1 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	                <td></td>
+	                <td>7 Jue 10 Ago</td>
+	                <td>6:30 - 7:15</td>
+	                <td>$7.499</td>
+	              </tr>
+	
+	            </tbody>
+	          </table>
+	      </div>
+	    </div>
+	   
+	  </div>
+				
+			<!-- FORM -->
+			<div class="row">
+				<div class="container">
+					<div class="row"><h2 style="color:#ec6608;font-size:28px;">Datos del Alumno</h2></div>
+					<div class="row">
+						<form class="form-horizontal" action="/action_page.php">
+							<div class="row">
+								<div class="col-md-6">
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="rut">RUT:</label>
+									      <div class="col-sm-8">
+									        <input type="text" class="form-control" id="rut"  name="rut">
+									      </div>
+									    </div>
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="nombres">Nombres:</label>
+									      <div class="col-sm-8">
+									        <input type="text" class="form-control" id="nombres" name="nombres">
+									      </div>
+									    </div>
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="apellido1">Apellido Paterno:</label>
+									      <div class="col-sm-8">
+									        <input type="text" class="form-control" id="apellido1"  name="apellido1">
+									      </div>
+									    </div> <div class="form-group"> <label class="control-label col-sm-4" for="apellido2">Apellido Materno:</label> <div class="col-sm-8"> <input type="text" class="form-control" id="apellido2"  name="apellido2"> </div>
+									    </div>
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="email">e-mail:</label>
+									      <div class="col-sm-8">
+									        <input type="email" class="form-control" id="email" name="email">
+									      </div>
+									    </div>
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="email2">Confirme su e-mail:</label>
+									      <div class="col-sm-8">
+									        <input type="email" class="form-control" id="email2" name="email2">
+									      </div>
+								    	</div>
+							    </div>
+							    <div class="col-md-6">
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="calle">Calle:</label>
+									      <div class="col-sm-8">
+									        <input type="text" class="form-control" id="calle" name="calle">
+									      </div>
+									    </div>
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="numero">Numero:</label>
+									      <div class="col-sm-8">
+									        <input type="text" class="form-control" id="numero"  name="numero">
+									      </div>
+									    </div>
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="departamento">Departamento:</label>
+									      <div class="col-sm-8">
+									        <input type="text" class="form-control" id="departamento"  name="departamento">
+									      </div>
+									    </div>
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="fechanac">Fecha de Nacimiento:</label>
+									      <div class="col-sm-8">
+									        <input type="text" class="form-control" id="fechanac"  name="fechanac">
+									      </div>
+									    </div>
+									    <div class="form-group">
+									      <label class="control-label col-sm-4" for="codvendedor">Codigo vendedor:</label>
+									      <div class="col-sm-8">
+									        <input type="email" class="form-control" id="codvendedor" name="codvendedor">
+									      </div>
+									    </div>
+	
+							    </div>
+						    </div>
+						    <div class="row">
+							    <div class="form-group">
+							      <div align="center">
+							        <button type="button" class="btn btn-default" (click)="nextStep()">Siguiente</button>
+							      </div>
+							    </div>
+						    </div>
+					  </form>
+					</div>
+				</div>
+	
+			</div>
+		</div>

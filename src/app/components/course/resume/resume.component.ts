@@ -11,5 +11,9 @@ export class ResumeComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  finish(){
+    alert("Bienvenido al curso!");
+  }
 
 }

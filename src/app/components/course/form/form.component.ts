@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 const now = new Date();
@@ -9,10 +9,25 @@ const now = new Date();
 })
 
 export class FormComponent implements OnInit {
-
+  @Output() open = new EventEmitter();
+  horarios:boolean = false;
+  datos:boolean = false;
+  
   constructor() { }
 
   ngOnInit() {
+  }
+  
+  showHorarios(){
+    this.horarios = true;
+  }
+  
+  showDatos(){
+    this.datos = true;
+  }
+  
+  nextStep(){
+    this.open.emit(null);
   }
 
   model: NgbDateStruct;

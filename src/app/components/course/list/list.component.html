@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="col-md-9" style="padding-left: 0px !important;">
-          <img src="//ocass-kevingn.c9users.io/ventaonline/img/newcalama.png" width="877px"/>
+          <img src="assets/Dewi/img/newcalama.png" width="727px"/>
         </div>
       </div>
       <div class="row">
@@ -52,10 +52,10 @@
 
 
     <div class="row">
-      <div *ngIf="flecha1"><img src="assets/img/flechas/f1.png" /></div>
-      <div *ngIf="flecha2"><img src="assets/img/flechas/f2.png" /></div>
-      <div *ngIf="flecha3"><img src="assets/img/flechas/f1.png" /></div>
-      <div *ngIf="flecha4"><img src="assets/img/flechas/f2.png" /></div>
+      <div *ngIf="flecha1"><img src="assets/img/flechas/f1.png" (click)="nextStep()"/></div>
+      <div *ngIf="flecha2"><img src="assets/img/flechas/f2.png" (click)="nextStep()"/></div>
+      <div *ngIf="flecha3"><img src="assets/img/flechas/f1.png" (click)="nextStep()"/></div>
+      <div *ngIf="flecha4"><img src="assets/img/flechas/f2.png" (click)="nextStep()"/></div>
     </div>
   </div>
 </div>
