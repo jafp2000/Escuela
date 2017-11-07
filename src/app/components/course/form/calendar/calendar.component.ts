@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  EventEmitter,
+  Output
+} from '@angular/core';
 
 
 @Component({
@@ -9,10 +15,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class CalendarComponent implements OnInit {
   inlineDatePicker: Date = new Date();
+  @Output() open = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  nextStep(){
+    this.open.emit(null);
   }
 
 }

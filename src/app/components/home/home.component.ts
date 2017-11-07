@@ -8,22 +8,27 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   viewForm:boolean = false;
   viewResumen:boolean = false;
-  
+
   constructor() { }
-  
-  
+
+
   ngOnInit() {
     this.viewForm = false;
     this.viewResumen = false;
   }
-  
+
   showForm(event){
     this.viewForm = true;
   }
-  
+
   showResumen(event){
     this.viewResumen = true;
     this.viewForm = false;
+  }
+
+  backForm(event){
+    this.viewResumen = false;
+    this.viewForm = true;
   }
 
 }

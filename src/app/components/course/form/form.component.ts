@@ -1,7 +1,5 @@
 import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
-const now = new Date();
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -10,30 +8,23 @@ const now = new Date();
 
 export class FormComponent implements OnInit {
   @Output() open = new EventEmitter();
-  horarios:boolean = false;
-  datos:boolean = false;
-  
+  schedule:boolean = false;
+  data:boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
-  
-  showHorarios(){
-    this.horarios = true;
+
+  showSchedule(event){
+    this.schedule = true;
   }
-  
-  showDatos(){
-    this.datos = true;
+
+  showData(event){
+    this.data = true;
   }
-  
+
   nextStep(){
     this.open.emit(null);
-  }
-
-  model: NgbDateStruct;
-  date: {year: number, month: number};
-
-  selectToday() {
-    this.model = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
   }
 }

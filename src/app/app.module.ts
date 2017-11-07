@@ -23,6 +23,8 @@ import { CalendarComponent } from './components/course/form/calendar/calendar.co
 import { ScheduleComponent } from './components/course/form/schedule/schedule.component';
 import { SelectedComponent } from './components/course/form/selected/selected.component';
 import { DataComponent } from './components/course/form/data/data.component';
+import { ResumeDataComponent } from './components/course/resume/resume-data/resume-data.component';
+import { PaymentComponent } from './components/course/resume/payment/payment.component';
 
 export function flatpickrFactory() {
   return flatpickr;
@@ -40,7 +42,9 @@ export function flatpickrFactory() {
     CalendarComponent,
     ScheduleComponent,
     SelectedComponent,
-    DataComponent
+    DataComponent,
+    ResumeDataComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,8 @@
                 [(ngModel)]="inlineDatePicker"
                 [altInput]="true"
                 [convertModelValue]="true"
-                [inline]="true">
+                [inline]="true"
+                (flatpickrChange)="nextStep()">
             </div>
             <div class="col-md-12">
               <dl>

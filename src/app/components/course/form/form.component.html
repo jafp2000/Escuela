@@ -6,9 +6,11 @@
 </div>
 <div class="container">
   <div class="row">
-    <app-calendar></app-calendar>
-    <app-schedule></app-schedule>
+    <app-calendar (open)="showSchedule(event)"></app-calendar>
+    <app-schedule *ngIf="schedule" (open)="showData(event)"></app-schedule>
   </div>
 </div>
-<app-selected></app-selected>
-<app-data></app-data>
+<div *ngIf="data">
+  <app-selected></app-selected>
+  <app-data (open)="nextStep(event)"></app-data>
+</div>

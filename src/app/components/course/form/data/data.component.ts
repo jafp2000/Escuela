@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-data',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data.component.css']
 })
 export class DataComponent implements OnInit {
+  @Output() open = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  nextStep(){
+    this.open.emit(null);
   }
 
 }
