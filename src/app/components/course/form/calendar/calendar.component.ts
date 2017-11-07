@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import 'flatpickr/dist/flatpickr.css';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['../../../../../../node_modules/flatpickr/dist/flatpickr.css']
 })
 export class CalendarComponent implements OnInit {
   inlineDatePicker: Date = new Date();
