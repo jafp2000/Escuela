@@ -1,4 +1,4 @@
 <div class="row">
-  <app-resume-data (next)="showPayment(event)" (previous)="previousStep(event)"></app-resume-data>
+  <app-resume-data *ngIf="!payment" (next)="showPayment(event)" (previous)="previousStep(event)"></app-resume-data>
   <app-payment *ngIf="payment"></app-payment>
 </div>
