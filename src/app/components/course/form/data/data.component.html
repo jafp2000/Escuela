@@ -9,32 +9,71 @@
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="rut">RUT:</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="rut"  name="rut">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="rut"
+                    name="rut"
+                    [(ngModel)]="student.rut"
+                    required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="nombres">Nombres:</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="nombres" name="nombres">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="nombres"
+                    name="nombres"
+                    [(ngModel)]="student.nombres"
+                    required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="apellido1">Apellido Paterno:</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="apellido1"  name="apellido1">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="apellidoPaterno"
+                    name="apellidoParteno"
+                    [(ngModel)]="student.apellidoParteno"
+                    required>
                   </div>
-                </div> <div class="form-group"> <label class="control-label col-sm-4" for="apellido2">Apellido Materno:</label> <div class="col-sm-8"> <input type="text" class="form-control" id="apellido2"  name="apellido2"> </div>
+                </div> <div class="form-group"> <label class="control-label col-sm-4" for="apellido2">Apellido Materno:</label>
+                  <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="apellidoMaterno"
+                    name="apellidoMaterno"
+                    [(ngModel)]="student.apellidoMaterno"
+                    required>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="email">e-mail:</label>
                   <div class="col-sm-8">
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="student.email"
+                    required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="email2">Confirme su e-mail:</label>
                   <div class="col-sm-8">
-                    <input type="email" class="form-control" id="email2" name="email2">
+                    <input
+                    type="email"
+                    class="form-control"
+                    id="emailConfirmacion"
+                    name="emailConfirmacion"
+                    [(ngModel)]="student.emailConfirmacion"
+                    required>
                   </div>
                 </div>
             </div>
@@ -42,31 +81,61 @@
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="calle">Calle:</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="calle" name="calle">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="calle"
+                    name="calle"
+                    [(ngModel)]="student.calle"
+                    required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="numero">Numero:</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="numero"  name="numero">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="numero"
+                    name="numero"
+                    [(ngModel)]="student.numero"
+                    required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="departamento">Departamento:</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="departamento"  name="departamento">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="departamento"
+                    name="departamento"
+                    [(ngModel)]="student.departamento"
+                    required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="fechanac">Fecha de Nacimiento:</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="fechanac"  name="fechanac">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="fechaNacimiento"
+                    name="fechaNacimiento"
+                    [(ngModel)]="student.fechaNacimiento"
+                    required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="codvendedor">Codigo vendedor:</label>
                   <div class="col-sm-8">
-                    <input type="email" class="form-control" id="codvendedor" name="codvendedor">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="codigoVendedor"
+                    name="codigoVendedor"
+                    [(ngModel)]="student.codigoVendedor"
+                    required>
                   </div>
                 </div>
 
@@ -75,7 +144,7 @@
           <div class="row">
             <div class="form-group">
               <div align="center">
-                <button type="button" class="btn btn-default" (click)="nextStep()">Siguiente</button>
+                <button type="submit" class="btn btn-success" (click)="nextStep()">Siguiente</button>
               </div>
             </div>
           </div>

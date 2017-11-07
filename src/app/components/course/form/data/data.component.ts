@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Student } from '../../../../models/student.model';
 
 @Component({
   selector: 'app-data',
@@ -7,6 +8,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class DataComponent implements OnInit {
   @Output() open = new EventEmitter();
+  student = new Student('','','','','','','','','', new Date(), '');
 
   constructor() { }
 
@@ -14,7 +16,7 @@ export class DataComponent implements OnInit {
   }
 
   nextStep(){
-    this.open.emit(null);
+    this.open.emit({student: this.student});
   }
 
 }

@@ -10,6 +10,7 @@ export class FormComponent implements OnInit {
   @Output() open = new EventEmitter();
   schedule:boolean = false;
   data:boolean = false;
+  student:JSON;
 
   constructor() { }
 
@@ -24,7 +25,8 @@ export class FormComponent implements OnInit {
     this.data = true;
   }
 
-  nextStep(){
-    this.open.emit(null);
+  nextStep(event){
+    this.student = event;
+    this.open.emit({student: this.student});
   }
 }

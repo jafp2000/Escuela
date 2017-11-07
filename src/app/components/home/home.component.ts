@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   viewForm:boolean = false;
   viewResumen:boolean = false;
+  student:JSON;
 
   constructor() { }
 
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   showResumen(event){
+    this.student = event;
     this.viewResumen = true;
     this.viewForm = false;
   }
