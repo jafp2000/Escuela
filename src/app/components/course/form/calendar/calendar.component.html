@@ -27,13 +27,22 @@
             </div>
           </div>
           <div class="row">
-          <div id="datepicker"></div>
-          <img src="assets/img/calendario.PNG" (click)="showHorarios()"/>
-          <div class="col-md-12">
-          <dl>
-              <dt class="calendar2"> Inicio de Clases Teoricas:               1 de Agosto</dt>
-            <dt class="calendar2"> Termino de Clases Teoricas:               9 de Agosto</dt>
-          </dl>
+            <div class="panel-body inline-flatpickr">
+              <input
+                class="form-control"
+                type="text"
+                mwlFlatpickr
+                [(ngModel)]="inlineDatePicker"
+                [altInput]="true"
+                [convertModelValue]="true"
+                [inline]="true">
+              NgModel value: {{ inlineDatePicker }}
+            </div>
+            <div class="col-md-12">
+              <dl>
+                  <dt class="calendar2"> Inicio de Clases Teoricas:               1 de Agosto</dt>
+                <dt class="calendar2"> Termino de Clases Teoricas:               9 de Agosto</dt>
+              </dl>
           </div>
         </div>
       </div>
