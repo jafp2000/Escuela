@@ -1,5 +1,4 @@
 <app-list (open)="showForm(event)"></app-list>
-<app-form *ngIf="viewForm" (open)="showResumen(event)"></app-form> 
-<app-resume *ngIf="viewResumen"></app-resume> 
-
-
+<app-form></app-form>
+<app-form *ngIf="viewForm" (open)="showResumen(event)"></app-form>
+<app-resume *ngIf="viewResumen"></app-resume>

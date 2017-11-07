@@ -1,176 +1,40 @@
-<ng-template #modalContent let-close="close">
-  <div class="modal-header">
-    <h5 class="modal-title">Event action occurred</h5>
-    <button type="button" class="close" (click)="close()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div>
-      Action:
-      <pre>{{ modalData?.action }}</pre>
-    </div>
-    <div>
-      Event:
-      <pre>{{ modalData?.event | json }}</pre>
-    </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
-  </div>
-</ng-template>
-
-<div class="row text-center">
-  <div class="col-md-4">
-    <div class="btn-group">
-      <div
-        class="btn btn-primary"
-        mwlCalendarPreviousView
-        [view]="view"
-        [(viewDate)]="viewDate"
-        (viewDateChange)="activeDayIsOpen = false">
-        Previous
-      </div>
-      <div
-        class="btn btn-outline-secondary"
-        mwlCalendarToday
-        [(viewDate)]="viewDate">
-        Today
-      </div>
-      <div
-        class="btn btn-primary"
-        mwlCalendarNextView
-        [view]="view"
-        [(viewDate)]="viewDate"
-        (viewDateChange)="activeDayIsOpen = false">
-        Next
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
-  </div>
-  <div class="col-md-4">
-    <div class="btn-group">
-      <div
-        class="btn btn-primary"
-        (click)="view = 'month'"
-        [class.active]="view === 'month'">
-        Month
-      </div>
-      <div
-        class="btn btn-primary"
-        (click)="view = 'week'"
-        [class.active]="view === 'week'">
-        Week
-      </div>
-      <div
-        class="btn btn-primary"
-        (click)="view = 'day'"
-        [class.active]="view === 'day'">
-        Day
-      </div>
-    </div>
+<div class="row">
+  <div class="container">
+    <h3 align="left" style="color:#ec6608;font-size:28px;">Seleccione la fecha de inicio y horario de su preferencia</h3>
+    <hr style="border-top: 1px solid #ec6608;">
   </div>
 </div>
-<br>
-<div [ngSwitch]="view">
-  <mwl-calendar-month-view
-    *ngSwitchCase="'month'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    [activeDayIsOpen]="activeDayIsOpen"
-    (dayClicked)="dayClicked($event.day)"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)">
-  </mwl-calendar-month-view>
-  <mwl-calendar-week-view
-    *ngSwitchCase="'week'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)">
-  </mwl-calendar-week-view>
-  <mwl-calendar-day-view
-    *ngSwitchCase="'day'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)">
-  </mwl-calendar-day-view>
-</div>
+<div class="row">
+  <div class="col-md-6" align="center">
+    <div class="col-md-offset-1">
 
-<br><br><br>
+      <div class="calendar-bg-gris">
+          <h3> Calendario </h3>
+          <div class="row">
 
-<h3>
-  Edit events
-  <button
-    class="btn btn-primary pull-right"
-    (click)="addEvent()">
-    Add new
-  </button>
-  <div class="clearfix"></div>
-</h3>
+              <div class="col-md-6" align="left">
+                <p>
+                <span class="calendar1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Inicio Disponible</b><br>
+                <span class="calendar2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Dias de Clases Teoricas</b><br>
+                <span class="calendar3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> No Disponible - Festivos</b></p>
+              </div>
+              <div class="col-md-6" align="left">
+                <p>
+                <span class="calendar4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Fecha de Inicio Seleccionada</b><br>
+                <span class="calendar5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b> Dias de Clases Practicas</b></p>
 
-<table class="table table-bordered">
-
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Primary color</th>
-      <th>Secondary color</th>
-      <th>Starts at</th>
-      <th>Ends at</th>
-      <th>Remove</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let event of events; let index = index">
-      <td>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="event.title"
-          (keyup)="refresh.next()">
-      </td>
-      <td>
-        <input
-          type="color"
-          [(ngModel)]="event.color.primary"
-          (change)="refresh.next()">
-      </td>
-      <td>
-        <input
-          type="color"
-          [(ngModel)]="event.color.secondary"
-          (change)="refresh.next()">
-      </td>
-      <td>
-        <mwl-demo-utils-date-time-picker
-          [(ngModel)]="event.start"
-          (ngModelChange)="refresh.next()"
-          placeholder="Not set">
-        </mwl-demo-utils-date-time-picker>
-      </td>
-      <td>
-        <mwl-demo-utils-date-time-picker
-          [(ngModel)]="event.end"
-          (ngModelChange)="refresh.next()"
-          placeholder="Not set">
-        </mwl-demo-utils-date-time-picker>
-      </td>
-      <td>
-        <button
-          class="btn btn-danger"
-          (click)="events.splice(index, 1); refresh.next()">
-          Delete
-        </button>
-      </td>
-    </tr>
-  </tbody>
-
-</table>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div id="datepicker"></div>
+          <img src="assets/img/calendario.PNG" (click)="showHorarios()"/>
+          <div class="col-md-12">
+          <dl>
+              <dt class="calendar2"> Inicio de Clases Teoricas:               1 de Agosto</dt>
+            <dt class="calendar2"> Termino de Clases Teoricas:               9 de Agosto</dt>
+          </dl>
+          </div>
+        </div>
+      </div>
+    </div>

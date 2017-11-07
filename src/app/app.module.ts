@@ -13,6 +13,10 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/course/list/list.component';
 import { FormComponent } from './components/course/form/form.component';
 import { ResumeComponent } from './components/course/resume/resume.component';
+import { CalendarComponent } from './components/course/form/calendar/calendar.component';
+import { ScheduleComponent } from './components/course/form/schedule/schedule.component';
+import { SelectedComponent } from './components/course/form/selected/selected.component';
+import { DataComponent } from './components/course/form/data/data.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ResumeComponent } from './components/course/resume/resume.component';
     HomeComponent,
     ListComponent,
     FormComponent,
-    ResumeComponent
+    ResumeComponent,
+    CalendarComponent,
+    ScheduleComponent,
+    SelectedComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
