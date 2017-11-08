@@ -16,12 +16,12 @@
           </div>
         </div>
         <div class="col-md-9" style="padding-left: 0px !important;">
-          <img src="assets/Dewi/img/newcalama.png" width="727px"/>
+          <img src="assets/Dewi/img/newcalama.png" width="878px"/>
         </div>
       </div>
       <div class="row">
         <div class="container">
-          <div class="your-class">
+          <div class="your-class" style="margin:1%">
             <!--div><img src="//lorempixel.com/300/200/transport/1" /></div-->
             <div><img src="assets/img/productos/1.png" /></div>
             <div><img src="assets/img/productos/2.png" /></div>
@@ -44,18 +44,20 @@
     <h6 align="left">Seleccione un curso de su interés para ver fechas y horarios disponibles</h6>
     <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Get it now</a></p>-->
     <div class="my-class slider-nav" >
-        <div><img src="assets/img/cursos/r1.png"  (click)="select(1)"/></div>
+        <div><img src="assets/img/cursos/r1.png" (click)="select(1)"/></div>
         <div><img src="assets/img/cursos/r2.png" (click)="select(2)"/></div>
         <div><img src="assets/img/cursos/r3.png" (click)="select(3)"/></div>
         <div><img src="assets/img/cursos/r4.png" (click)="select(4)"/></div>
     </div>
 
 
-    <div class="row">
-      <div *ngIf="flecha1"><img src="assets/img/flechas/f1.png" (click)="nextStep()"/></div>
-      <div *ngIf="flecha2"><img src="assets/img/flechas/f2.png" (click)="nextStep()"/></div>
-      <div *ngIf="flecha3"><img src="assets/img/flechas/f1.png" (click)="nextStep()"/></div>
-      <div *ngIf="flecha4"><img src="assets/img/flechas/f2.png" (click)="nextStep()"/></div>
+    <div class="row" align="left">
+      <div class="container">
+        <div *ngIf="flecha1"><img src="assets/img/flechas/f1.png" width="570px" (click)="nextStep()"/></div>
+        <div *ngIf="flecha2"><img src="assets/img/flechas/f2.png" width="570px" (click)="nextStep()"/></div>
+        <div *ngIf="flecha3"><img src="assets/img/flechas/f1.png" width="570px" (click)="nextStep()"/></div>
+        <div *ngIf="flecha4"><img src="assets/img/flechas/f2.png" width="570px" (click)="nextStep()"/></div>
+      </div>
     </div>
   </div>
 </div>
@@ -66,13 +68,13 @@
    $('.your-class').slick({
       slidesToShow: 4,
      slidesToScroll: 1,
-     autoplay: true,
+     autoplay: false,
      autoplaySpeed: 2000,
    });
    $('.my-class').slick({
       slidesToShow: 2,
      slidesToScroll: 1,
-     autoplay: true,
+     autoplay: false,
      autoplaySpeed: 2000,
    });
   });
