@@ -16,7 +16,10 @@
           </div>
         </div>
         <div class="col-md-9" style="padding-left: 0px !important;">
-          <img src="assets/Dewi/img/newcalama.png" width="878px"/>
+          <!--img src="assets/Dewi/img/newcalama.png" width="878px"/-->
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]=15>
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
         </div>
       </div>
       <div class="row">
@@ -46,18 +49,53 @@
     <div class="my-class slider-nav" >
         <div><img src="assets/img/cursos/r1.png" (click)="select(1)"/></div>
         <div><img src="assets/img/cursos/r2.png" (click)="select(2)"/></div>
-        <div><img src="assets/img/cursos/r3.png" (click)="select(3)"/></div>
-        <div><img src="assets/img/cursos/r4.png" (click)="select(4)"/></div>
+        <div><img src="assets/img/cursos/r3.png" (click)="select(1)"/></div>
+        <div><img src="assets/img/cursos/r4.png" (click)="select(2)"/></div>
     </div>
 
 
     <div class="row" align="left">
-      <div class="container">
+      <div *ngIf="flecha1" class="col-md-6" align="left">
+          <div class="bg-orange1">
+            <div class="radio">
+              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Normal - 3 Semanas</h6>
+            </div>
+            <div class="radio">
+              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Express - 2 Semanas</h6>
+            </div>
+            <div class="radio disabled">
+              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Acelerado - 1 Semana</h6>
+            </div>
+            <div class="radio">
+              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Premium - 1 Semana Horario Variable</h6>
+            </div>
+        </div>
+        <div class="flecha1">
+
+        </div>
+      </div>
+      <div *ngIf="flecha2" class="col-md-6" align="left">
+          <div class="bg-orange2">
+            <div class="radio">
+              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Normal - 3 Semanas</h6>
+            </div>
+            <div class="radio">
+              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Express - 2 Semanas</h6>
+            </div>
+            <div class="radio">
+              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Premium - 1 Semana Horario Variable</h6>
+            </div>
+        </div>
+        <div class="flecha2">
+
+        </div>
+      </div>
+      <!--div class="container">
         <div *ngIf="flecha1"><img src="assets/img/flechas/f1.png" width="570px" (click)="nextStep()"/></div>
         <div *ngIf="flecha2"><img src="assets/img/flechas/f2.png" width="570px" (click)="nextStep()"/></div>
         <div *ngIf="flecha3"><img src="assets/img/flechas/f1.png" width="570px" (click)="nextStep()"/></div>
         <div *ngIf="flecha4"><img src="assets/img/flechas/f2.png" width="570px" (click)="nextStep()"/></div>
-      </div>
+      </div-->
     </div>
   </div>
 </div>

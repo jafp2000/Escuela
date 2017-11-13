@@ -8,6 +8,7 @@ import { DragScrollModule } from 'angular2-drag-scroll';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlatpickrModule, FLATPICKR } from 'angularx-flatpickr';
 import * as flatpickr from 'flatpickr';
+import { AgmCoreModule } from '@agm/core';
 
 //CSS
 import 'flatpickr/dist/flatpickr.css';
@@ -55,6 +56,9 @@ export function flatpickrFactory() {
     FlatpickrModule.forRoot({
       provide: FLATPICKR,
       useFactory: flatpickrFactory
+    }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA7oGFvJ-RyOTReb8F9V92XFPDuUeCeB7I'
     })
   ],
   providers: [],
