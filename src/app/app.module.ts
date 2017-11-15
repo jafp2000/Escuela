@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //LIBRERIAS
 import { CalendarModule } from 'angular-calendar';
-import { DragScrollModule } from 'angular2-drag-scroll';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlatpickrModule, FLATPICKR } from 'angularx-flatpickr';
 import * as flatpickr from 'flatpickr';
@@ -13,6 +13,7 @@ import { AgmCoreModule } from '@agm/core';
 //CSS
 import 'flatpickr/dist/flatpickr.css';
 
+//COMPONENTES
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -26,6 +27,9 @@ import { SelectedComponent } from './components/course/form/selected/selected.co
 import { DataComponent } from './components/course/form/data/data.component';
 import { ResumeDataComponent } from './components/course/resume/resume-data/resume-data.component';
 import { PaymentComponent } from './components/course/resume/payment/payment.component';
+
+//SERVICIOS
+import { CourseService } from './service/course.service';
 
 export function flatpickrFactory() {
   return flatpickr;
@@ -50,7 +54,6 @@ export function flatpickrFactory() {
   imports: [
     BrowserModule,
     CalendarModule.forRoot(),
-    DragScrollModule,
     NgbModule.forRoot(),
     FormsModule,
     FlatpickrModule.forRoot({
@@ -59,9 +62,12 @@ export function flatpickrFactory() {
     }),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA7oGFvJ-RyOTReb8F9V92XFPDuUeCeB7I'
-    })
+    }),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CourseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

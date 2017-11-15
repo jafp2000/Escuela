@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { DragScroll } from 'angular2-drag-scroll';
 import { HomeComponent } from '../../home/home.component';
 
 @Component({
