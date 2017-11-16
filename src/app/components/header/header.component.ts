@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CourseService } from '../../service/course.service';
 declare var $:any;
 
 @Component({
@@ -8,38 +8,23 @@ declare var $:any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  data:any[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private _service:CourseService) { }
 
   ngOnInit() {
   }
 
   test(){
-    var text = $('.titleTest').text();
-    console.log('texto: ' + text);
-    //NO ESTA HACIENDO NADA
-    $.soap({
-      url:"http://201.236.20.29/WS_carro_PRD/WSE.asmx?WSDL",
-      method:"getCiudades",
-      HTTPHeaders:{
-        'Content-Type': 'application/xml',
-        'Server-Protocol': 'SOAP'
+    this._service.test().subscribe(
+      result => {
+        this.data = result['Ciudad'];
+        console.log(this.data[0]);
       },
-      success: function (response) {
-        console.log('funciono')
-      },
-      error: function (response){
-        console.log('error')
+      error => {
+        console.log("error");
       }
-    });
-    //LO REBOTAN LOS PERMISOS 
-    const headers = new HttpHeaders()
-            .set("Content-Type", "application/xml")
-            .set("Server-Protocol", "SOAP");
-    this.http.get('http://201.236.20.29/WS_carro_PRD/WSE.asmx?WSDL', {headers})
-    .subscribe(data => {
-      console.log('llego');
-    });
+    );
   }
 
 }
