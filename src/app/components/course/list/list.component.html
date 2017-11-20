@@ -7,11 +7,10 @@
         <div class="col-md-3">
           <h2 style="color:white">Elige tu Sucursal y Curso</h2><br>
           <div class="form-group">
-            <select class="form-control" id="sel1">
-              <option>La Serena</option>
-              <option>La Cava</option>
-              <option>Santiago Centro</option>
-              <option>Barquisimeto</option>
+            <select class="form-control" id="sel1" (change)="onChange($event.target.value)">
+              <option *ngFor="let city of cities" [value]="city.id_ciudad" (change)="changeLocation(city.latitud, city.longitud)">
+                {{city.nombre_ciudad}}
+              </option>
             </select>
           </div>
         </div>

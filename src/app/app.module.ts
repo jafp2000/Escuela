@@ -30,6 +30,7 @@ import { PaymentComponent } from './components/course/resume/payment/payment.com
 
 //SERVICIOS
 import { CourseService } from './service/course.service';
+import { CitiesService } from './service/cities.service';
 
 export function flatpickrFactory() {
   return flatpickr;
@@ -66,7 +67,8 @@ export function flatpickrFactory() {
     HttpClientModule
   ],
   providers: [
-    CourseService
+    CourseService,
+    CitiesService
   ],
   bootstrap: [AppComponent]
 })
