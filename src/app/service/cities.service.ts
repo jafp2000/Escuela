@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
+import { Constants } from './api_config';
 
 @Injectable()
 export class CitiesService {
@@ -9,7 +10,8 @@ export class CitiesService {
   constructor(private http: HttpClient) { }
 
   getCiudades(){
-    return this.http.get('http://localhost/rest_api/api/getCiudades')
+    const URL = Constants.BASE_URL + 'api/getCiudades';
+    return this.http.get(URL)
       .map(res => res);
   }
 
