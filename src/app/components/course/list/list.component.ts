@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, OnInit} from '@angular/core';
 import { HomeComponent } from '../../home/home.component';
 import { CitiesService } from '../../../service/cities.service';
+import { CourseService } from '../../../service/course.service';
 
 @Component({
   selector: 'app-list',
@@ -15,9 +16,13 @@ export class ListComponent implements OnInit{
 
   @Output() open = new EventEmitter();
 
-  constructor(private _service:CitiesService) {
+  constructor(private _service:CitiesService, private _serviceCourse:CourseService) {
     this.flecha1=false;
     this.flecha2=false;
+  }
+
+  onTest(){
+    console.log(this._serviceCourse.getData());
   }
 
   ngOnInit() {

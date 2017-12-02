@@ -16,15 +16,8 @@ export class HeaderComponent implements OnInit {
   }
 
   test(){
-    this._service.test().subscribe(
-      result => {
-        this.data = result['Ciudad'];
-        console.log(this.data[0]);
-      },
-      error => {
-        console.log("error");
-      }
-    );
+    this._service.updateData("Hola mundo otra vez");
+    console.log(this._service.getData());
   }
 
 }
