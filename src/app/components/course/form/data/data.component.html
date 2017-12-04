@@ -118,14 +118,21 @@
                   <label class="control-label col-sm-4" for="fechanac">Fecha de Nacimiento:</label>
                   <div class="col-sm-8">
                     <input
+                      type="date"
+                      class="form-control"
+                      id="fechaNacimiento"
+                      name="fechaNacimiento"
+                      [(ngModel)]="student.fechaNacimiento"
+                      required>
+                    <!--input
                       class="form-control"
                       type="text"
                       mwlFlatpickr
-                      [(ngModel)]="selectedDate"
+                      [(ngModel)]="student.fechaNacimiento"
                       [altInput]="true"
                       [convertModelValue]="true"
                       [inline]="true">
-                      <p>Presione dos veces para confirmar</p>
+                      <p>Presione dos veces para confirmar</p-->
                   </div>
                 </div>
                 <div class="form-group">
