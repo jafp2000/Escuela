@@ -15,14 +15,12 @@ import {
 export class ResumeComponent implements OnChanges {
   @Output() back = new EventEmitter();
   payment:boolean = false;
-  @Input('student') student:JSON;
 
   constructor() { }
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
     for (let propName in changes) {
       let changedProp = changes[propName];
-      this.student  = changedProp.currentValue;
     }
   }
 

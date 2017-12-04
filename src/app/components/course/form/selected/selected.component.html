@@ -6,19 +6,19 @@
   </div>
   <div class="row">
     <div class="col-md-2">
-      <img src="assets/img/productos/1.png" height="200px" width="180px"/>
+      <img src="{{'assets/img/productos/'+categoria+'.png'}}" height="200px" width="180px"/>
     </div>
     <div class="col-md-3">
       <h4 style="color:#ec6608;">Curso Teorico</h4>
       <p>
         Lunes a Sabado, de 9:00 a 12:00 hrs.<br>
-        Inicio: Martes 1 de Agosto<br>
-        Termino: Lunes 9 de Agosto
+        Inicio: {{inicio | date:fullDate}}<br>
+        Termino: {{fin | date:fullDate}}
       </p>
       <h4 style="color:#ec6608;">Curso Practico</h4>
       <p>
-        Inicio: Martes 10 de Agosto<br>
-        Termino: Lunes 24 de Agosto
+        Inicio: {{inicio | date:fullDate}}<br>
+        Termino: {{fin | date:fullDate}}
       </p>
       <h4 style="color:#ec6608;">Numero de Tramos</h4>
       <p>
@@ -26,7 +26,7 @@
       </p><br><br>
       <h4 style="color:#ec6608;">Valor de la Compra</h4>
       <h3>
-        <b>$99.990</b>
+        <b>{{modalidad.precio | currency}}</b>
       </h3>
 
     </div>

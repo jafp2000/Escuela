@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../../../../service/register.service';
 
 @Component({
   selector: 'app-payment',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  modalidad:any;
 
-  constructor() { }
+  constructor(private _service:RegisterService) { }
 
   ngOnInit() {
+    this.modalidad = this._service.getModalidad();
   }
 
   finish(){

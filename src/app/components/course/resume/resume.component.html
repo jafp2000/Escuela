@@ -2,7 +2,7 @@
   <app-resume-data
     *ngIf="!payment"
     (next)="showPayment(event)"
-    (previous)="previousStep(event)"
-    [student]="student"></app-resume-data>
+    (previous)="previousStep(event)">
+  </app-resume-data>
   <app-payment *ngIf="payment"></app-payment>
 </div>
