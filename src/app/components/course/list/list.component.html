@@ -1,3 +1,4 @@
+<!-- IMPORTE DE SLICK -->
 <div class="box">
   <div class="container">
       <div class="row">
@@ -19,93 +20,73 @@
         </div>
       </div>
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <div class="your-class">
-            <!--div><img src="//lorempixel.com/300/200/transport/1" /></div
-            <div><img src="assets/img/productos/1.png" /></div>
-            <div><img src="assets/img/productos/2.png" /></div>
-            <div><img src="assets/img/productos/3.png" /></div>
-            <div><img src="assets/img/productos/4.png" /></div>
-            <div><img src="assets/img/productos/5.png" /></div>
-            <div><img src="assets/img/productos/6.png" /></div>
-            -->
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/1.png" (click)="onTest()"/></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/2.png" /></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/3.png" /></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/4.png" /></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/5.png" /></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/6.png" /></div>
+            <!--div><img src="//lorempixel.com/300/200/transport/1" /></div-->
+            <div><img src="assets/img/productos/1.png" (click)="onSelectCategory(1)"/></div>
+            <div><img src="assets/img/productos/2.png" (click)="onSelectCategory(2)"/></div>
+            <div><img src="assets/img/productos/3.png" (click)="onSelectCategory(3)"/></div>
+            <div><img src="assets/img/productos/4.png" (click)="onSelectCategory(4)"/></div>
+            <div><img src="assets/img/productos/5.png" (click)="onSelectCategory(5)"/></div>
+            <div><img src="assets/img/productos/6.png" (click)="onSelectCategory(6)"/></div>
           </div>
         </div>
       </div>
   </div>
 </div>
-<div class="jumbotron">
+<div id="courses-list" class="jumbotron courses-list" style="display: none;">
   <div class="container">
-    <h1><span></span></h1>
-    <h2 align="left">Cursos Licencia Clase B</h2>
-    <h3 align="left">Vehiculos Particulares</h3>
-    <hr>
-    <h4 align="left">Cursos Disponibles</h4>
-    <h6 align="left">Seleccione un curso de su interés para ver fechas y horarios disponibles</h6>
-    <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Get it now</a></p>-->
-    <div class="my-class slider-nav" >
-        <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/cursos/r1.png" (click)="select(1)"/></div>
-        <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/cursos/r2.png" (click)="select(2)"/></div>
-        <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/cursos/r3.png" (click)="select(1)"/></div>
-        <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/cursos/r4.png" (click)="select(2)"/></div>
+    <div>
+      <h1><span></span></h1>
+      <h2 align="left">Cursos Licencia Clase B</h2>
+      <h3 align="left">Vehiculos Particulares</h3>
+      <hr>
+      <h4 align="left">Cursos Disponibles</h4>
+      <h6 align="left">Seleccione un curso de su interés para ver fechas y horarios disponibles</h6>
+      <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Get it now</a></p>-->
     </div>
-    <!--div class="my-class slider-nav" >
-        <div><img src="assets/img/cursos/r1.png" (click)="select(1)"/></div>
-        <div><img src="assets/img/cursos/r2.png" (click)="select(2)"/></div>
-        <div><img src="assets/img/cursos/r3.png" (click)="select(1)"/></div>
-        <div><img src="assets/img/cursos/r4.png" (click)="select(2)"/></div>
-    </div-->
-
-
-    <div class="row" align="left">
-      <div *ngIf="flecha1" class="col-md-6" align="left">
-          <div class="bg-orange1">
-            <div class="radio">
-              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Normal - 3 Semanas</h6>
+    <div class="box">
+      <div class="container">
+        <ngx-slick [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let curso of cursos; let i = index;">
+                <div (click)="select(i, curso.id_curso, curso.requisitos)" style="height:200px;" class="{{'bg-orange'+getOrange(i)}}">
+                  <div class="row" style="padding-top: 70px;">
+                    <div class="col-md-4" align="center" style="  vertical-align: text-center;">
+                      <img src="assets/img/Iconos/clase_b.png"/>
+                    </div>
+                    <div class="col-md-8" style="margin-top: -40px;">
+                      <h5>{{curso.nombre}} - {{i}} - {{getOrange(i)}}</h5>
+                      <p>{{getDisponibles(curso.modalidad)}} Cupos Disponiles<br>
+                      Fecha </p>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <div class="radio">
-              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Express - 2 Semanas</h6>
-            </div>
-            <div class="radio disabled">
-              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Acelerado - 1 Semana</h6>
-            </div>
-            <div class="radio">
-              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Premium - 1 Semana Horario Variable</h6>
-            </div>
-        </div>
-        <div class="flecha1">
-
-        </div>
+        </ngx-slick>
       </div>
-      <div *ngIf="flecha2" class="col-md-6" align="left">
-          <div class="bg-orange2">
-            <div class="radio">
-              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Normal - 3 Semanas</h6>
-            </div>
-            <div class="radio">
-              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Express - 2 Semanas</h6>
-            </div>
-            <div class="radio">
-              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep()">Curso Premium - 1 Semana Horario Variable</h6>
+      <div class="row" align="right">
+      <div class="col-md-6" style="padding-right:0px;" align="left" *ngIf="activarFlecha">
+          <div class="{{'bg-orange'+flecha}}">
+            <div *ngFor="let modalidad of modalidadesSeleccionadas; let i = index;" class="radio">
+              <h6 style="color:white"><input type="radio" name="optradio1" (change)="nextStep(modalidad.id_modalidad)">{{modalidad.nombre}} - {{calcularDias(modalidad.fecha_inicio, modalidad.fecha_fin)}} Dias</h6>
             </div>
         </div>
-        <div class="flecha2">
-
-        </div>
+        <div class="{{'flecha'+flecha}}"></div>
+        <p>{{requisitos}}</p>
       </div>
-      <!--div class="container">
-        <div *ngIf="flecha1"><img src="assets/img/flechas/f1.png" width="570px" (click)="nextStep()"/></div>
-        <div *ngIf="flecha2"><img src="assets/img/flechas/f2.png" width="570px" (click)="nextStep()"/></div>
-        <div *ngIf="flecha3"><img src="assets/img/flechas/f1.png" width="570px" (click)="nextStep()"/></div>
-        <div *ngIf="flecha4"><img src="assets/img/flechas/f2.png" width="570px" (click)="nextStep()"/></div>
-      </div-->
     </div>
+    </div>
+
+    
+    
+  </div>
+</div>
+<div class="container courses-no-list" id="courses-no-list" style="display: none;">
+  <div>
+      <hr>
+      <h1><span></span></h1>
+      <h2 align="left">No existen cursos de la categoria seleccionada en esa ciudad</h2>
+      <hr>
   </div>
 </div>
 

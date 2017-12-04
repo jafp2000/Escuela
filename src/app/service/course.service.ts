@@ -2,27 +2,38 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
-import { Constants } from './api_config';
+import {data} from '../models/cursos.model';
 
 @Injectable()
 export class CourseService {
-  data = "hola mundo";
-
+  data:any;
+  
   constructor(private http: HttpClient) {
-    
+    this.data = data;
   }
 
-  test(){
-    const URL = Constants.BASE_URL + 'api/getCiudades';
-    return this.http.get(URL)
-      .map(res => res);
+  getCiudades(){
+    return this.data.ciudades;
   }
-
-  updateData(value){
-    this.data = value;
-  }
-
-  getData(){
-    return this.data;
+  
+  getCursos(id_ciudad, id_categoria){
+    var temp = this.data.ciudades;
+    var ciudad = temp.filter(
+      city => city.id_ciudad == id_ciudad
+    );
+    if(ciudad.length > 0){
+      var cursos = ciudad[0].cursos;
+      if(cursos.length > 0){
+        var response = cursos.filter(
+          curso => curso.id_categoria == id_categoria
+        );
+        return response;
+      }else{
+        alert('No hay cursos disponibles para su seleccion');
+      }
+    }else{
+      alert('No hay cursos disponibles para su seleccion');
+    }
+    //
   }
 }

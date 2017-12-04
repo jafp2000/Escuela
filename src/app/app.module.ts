@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlatpickrModule, FLATPICKR } from 'angularx-flatpickr';
 import * as flatpickr from 'flatpickr';
 import { AgmCoreModule } from '@agm/core';
+import { SlickModule } from 'ngx-slick';
 
 //CSS
 import 'flatpickr/dist/flatpickr.css';
@@ -31,6 +32,7 @@ import { PaymentComponent } from './components/course/resume/payment/payment.com
 //SERVICIOS
 import { CourseService } from './service/course.service';
 import { CitiesService } from './service/cities.service';
+import { RegisterService } from './service/register.service';
 
 export function flatpickrFactory() {
   return flatpickr;
@@ -64,11 +66,13 @@ export function flatpickrFactory() {
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA7oGFvJ-RyOTReb8F9V92XFPDuUeCeB7I'
     }),
-    HttpClientModule
+    HttpClientModule,
+    SlickModule.forRoot()
   ],
   providers: [
     CourseService,
-    CitiesService
+    CitiesService,
+    RegisterService
   ],
   bootstrap: [AppComponent]
 })

@@ -16,8 +16,26 @@ export class HeaderComponent implements OnInit {
   }
 
   test(){
-    this._service.updateData("Hola mundo otra vez");
-    console.log(this._service.getData());
+    let init = new Date("11/28/2017");
+    let finish = new Date();
+    console.log(init);
+    this.getDates(init, finish);
+  }
+  
+  getDates(startDate, stopDate) {
+    var dateArray = new Array();
+    var currentDate = new Date(startDate);
+    console.log("PARAMETROS:");
+    console.log(startDate);
+    console.log(stopDate);
+    console.log("INICIO DE WHILE");
+    while (currentDate <= stopDate) {
+        let d = new Date(currentDate);
+        dateArray.push(d);
+        currentDate.setDate(currentDate.getDate() + 1);
+        console.log(currentDate);
+    }
+    console.log(dateArray);
   }
 
 }

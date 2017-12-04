@@ -26,12 +26,14 @@
                 class="form-control"
                 type="text"
                 mwlFlatpickr
-                [(ngModel)]="inlineDatePicker"
+                [(ngModel)]="selectedDate"
                 [altInput]="true"
                 [convertModelValue]="true"
                 [inline]="true"
+                [enable]="enablesDate"
                 (flatpickrChange)="nextStep()">
             </div>
+            <p>Presione dos veces para confirmar</p>
             <div class="col-md-12">
               <dl>
                   <dt class="calendar2"> Inicio de Clases Teoricas:               1 de Agosto</dt>
