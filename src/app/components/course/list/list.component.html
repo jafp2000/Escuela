@@ -23,12 +23,12 @@
         <div class="container-fluid">
           <div class="your-class">
             <!--div><img src="//lorempixel.com/300/200/transport/1" /></div-->
-            <div><img src="assets/img/productos/1.png" (click)="onSelectCategory(1)"/></div>
-            <div><img src="assets/img/productos/2.png" (click)="onSelectCategory(2)"/></div>
-            <div><img src="assets/img/productos/3.png" (click)="onSelectCategory(3)"/></div>
-            <div><img src="assets/img/productos/4.png" (click)="onSelectCategory(4)"/></div>
-            <div><img src="assets/img/productos/5.png" (click)="onSelectCategory(5)"/></div>
-            <div><img src="assets/img/productos/6.png" (click)="onSelectCategory(6)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/1.png" (click)="onSelectCategory(1)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/2.png" (click)="onSelectCategory(2)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/3.png" (click)="onSelectCategory(3)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/4.png" (click)="onSelectCategory(4)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/5.png" (click)="onSelectCategory(5)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/6.png" (click)="onSelectCategory(6)"/></div>
           </div>
         </div>
       </div>
@@ -50,14 +50,13 @@
         <ngx-slick [config]="slideConfig">
             <div ngxSlickItem *ngFor="let curso of cursos; let i = index;">
                 <div (click)="select(i, curso.id_curso, curso.requisitos)" style="height:200px;" class="{{'bg-orange'+getOrange(i)}}">
-                  <div class="row" style="padding-top: 70px;">
-                    <div class="col-md-4" align="center" style="  vertical-align: text-center;">
-                      <img src="assets/img/Iconos/clase_b.png"/>
+                  <div class="row category_box">
+                    <div class="col-md-4 category_img" align="center">
+                      <img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/Iconos/clase_b.png"/>
                     </div>
-                    <div class="col-md-8" style="margin-top: -40px;">
-                      <h5>{{curso.nombre}} - {{i}} - {{getOrange(i)}}</h5>
-                      <p>{{getDisponibles(curso.modalidad)}} Cupos Disponiles<br>
-                      Fecha </p>
+                    <div class="col-md-8 category_row">
+                      <h5>{{curso.nombre}}</h5>
+                      <p>{{getDisponibles(curso.modalidad)}} Cupos Disponiles</p>
                     </div>
                   </div>
                 </div>
