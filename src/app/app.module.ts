@@ -33,6 +33,7 @@ import { PaymentComponent } from './components/course/resume/payment/payment.com
 import { CourseService } from './service/course.service';
 import { CitiesService } from './service/cities.service';
 import { RegisterService } from './service/register.service';
+import { CategoriesService } from './service/categories.service';
 
 export function flatpickrFactory() {
   return flatpickr;
@@ -72,7 +73,8 @@ export function flatpickrFactory() {
   providers: [
     CourseService,
     CitiesService,
-    RegisterService
+    RegisterService,
+    CategoriesService
   ],
   bootstrap: [AppComponent]
 })

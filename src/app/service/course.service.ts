@@ -3,19 +3,34 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import {data} from '../models/cursos.model';
+import { Constants } from './api_config';
 
 @Injectable()
 export class CourseService {
   data:any;
-  
+
   constructor(private http: HttpClient) {
     this.data = data;
+  }
+
+  getCursosMes(id_categoria, id_ciudad){
+    let date = new Date();
+    let mes = date.getMonth().toString();
+    let ano = date.getFullYear().toString();
+    const URL = Constants.BASE_URL +
+      'api/getCursosMes/' +
+      id_categoria + '/' +
+      id_ciudad + '/' +
+      mes + '/' +
+      ano;
+    return this.http.get(URL)
+      .map(res => res);
   }
 
   getCiudades(){
     return this.data.ciudades;
   }
-  
+
   getCursos(id_ciudad, id_categoria){
     var temp = this.data.ciudades;
     var ciudad = temp.filter(

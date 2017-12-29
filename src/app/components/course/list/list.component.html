@@ -6,8 +6,8 @@
           <h2 style="color:white">Elige tu Sucursal y Curso</h2><br>
           <div class="form-group">
             <select class="form-control" id="sel1" (change)="onChange($event.target.value)">
-              <option *ngFor="let city of cities" [value]="city.id_ciudad" (change)="changeLocation(city.latitud, city.longitud)">
-                {{city.nombre_ciudad}}
+              <option *ngFor="let city of cities" [value]="city.ID_CIUDAD" (change)="changeLocation(city.latitud, city.longitud)">
+                {{city.NOMBRE_CIUDAD}}
               </option>
             </select>
           </div>
@@ -23,12 +23,12 @@
         <div class="container-fluid">
           <div class="your-class">
             <!--div><img src="//lorempixel.com/300/200/transport/1" /></div-->
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/1.png" (click)="onSelectCategory(1)"/></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/2.png" (click)="onSelectCategory(2)"/></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/3.png" (click)="onSelectCategory(3)"/></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/4.png" (click)="onSelectCategory(4)"/></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/5.png" (click)="onSelectCategory(5)"/></div>
-            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/6.png" (click)="onSelectCategory(6)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/1.png" (click)="onSelectCategory(14)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/2.png" (click)="onSelectCategory(19)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/3.png" (click)="onSelectCategory(23)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/4.png" (click)="onSelectCategory(18)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/5.png" (click)="onSelectCategory(24)"/></div>
+            <div><img src="http://peuman.cl/apps/ventaonline_20170925/dist/assets/img/productos/6.png" (click)="onSelectCategory(69)"/></div>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
   <div class="container">
     <div>
       <h1><span></span></h1>
-      <h2 align="left">Cursos Licencia Clase B</h2>
+      <h2 align="left">{{getCategoryName}}</h2>
       <h3 align="left">Vehiculos Particulares</h3>
       <hr>
       <h4 align="left">Cursos Disponibles</h4>
